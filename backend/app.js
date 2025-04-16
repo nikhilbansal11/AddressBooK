@@ -18,7 +18,11 @@ app.use(cors({
 app.use(express.json()); 
 const buildpath = path.join(__dirname, "../frontend/dist");
 app.use(express.static(buildpath));
+
 // app.use(express.static(buildpath));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(buildpath, "index.html"));
+});
 
 app.use(bodyParser.json()); 
 app.use(express.urlencoded({ extended: true })); 
