@@ -50,9 +50,9 @@ app.use("/user", userRouter);
 app.use("/contact", contactRouter);
 
 // Basic route
-app.get("/", (req, res) => {
-  res.send("hi");
-});
+// app.get("/", (req, res) => {
+//   res.send("hi");
+// });
 
 // Start server
 app.listen(5000, () => {
